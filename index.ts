@@ -19,6 +19,8 @@ buttons.forEach(function (button) {
     button.addEventListener("click", calculateValues);
   } else if (button.dataset.operation === "clear") {
     button.addEventListener("click", clearStateAndDisplay);
+  } else if (button.dataset.operation === "previous") {
+    button.addEventListener("click", resetPrevious);
   } else {
     button.addEventListener("click", gatherValuesAndDisplay);
   }
@@ -106,4 +108,16 @@ function clearStateAndDisplay() {
   state.lastValue = "";
   prevResultDisplay.textContent = "0";
   currentResultDisplay.textContent = "0";
+}
+
+function resetPrevious() {
+  if (state.lastValue) {
+    state.lastValue = "";
+  } else if (state.operation) {
+    state.operation = "";
+  } else if (state.firstValue) {
+    state.firstValue = "";
+  }
+
+  displayValues("current");
 }
