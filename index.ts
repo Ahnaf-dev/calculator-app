@@ -1,6 +1,10 @@
 const buttons = document.querySelectorAll("button");
 const prevResultDisplay = document.querySelector(".text-sm");
 const currentResultDisplay = document.querySelector(".text-lg");
+const dayBtn = document.querySelector(".day");
+const nightBtn = document.querySelector(".night");
+
+// calculator functionality
 
 interface State {
   firstValue: string;
@@ -120,4 +124,35 @@ function resetPrevious() {
   }
 
   displayValues("current");
+}
+
+// theme toggle functionality
+
+interface themeVars {
+  bg: string;
+  primary: string;
+  secondary: string;
+}
+
+nightBtn.addEventListener("click", () => {
+  changeCSSVars({
+    bg: "black",
+    primary: "white",
+    secondary: "black",
+  });
+});
+
+dayBtn.addEventListener("click", () => {
+  changeCSSVars({
+    bg: "white",
+    primary: "#22252d",
+    secondary: "#2a2d37",
+  });
+});
+
+function changeCSSVars(options: themeVars) {
+  let root = document.querySelector(":root") as HTMLElement;
+  root.style.setProperty("--bg", options.bg);
+  root.style.setProperty("--primary", options.primary);
+  root.style.setProperty("--secondary", options.secondary);
 }
