@@ -76,7 +76,7 @@ function calculateValues() {
       state.firstValue = `${firstValue + lastValue}`;
       break;
     case "%":
-      state.firstValue = `${firstValue % lastValue}`;
+      state.firstValue = `${firstValue / lastValue}`;
       break;
     case "X":
       state.firstValue = `${firstValue * lastValue}`;

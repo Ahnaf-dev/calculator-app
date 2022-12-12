@@ -59,7 +59,7 @@ function calculateValues() {
             state.firstValue = "".concat(firstValue + lastValue);
             break;
         case "%":
-            state.firstValue = "".concat(firstValue % lastValue);
+            state.firstValue = "".concat(firstValue / lastValue);
             break;
         case "X":
             state.firstValue = "".concat(firstValue * lastValue);
