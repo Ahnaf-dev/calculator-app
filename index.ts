@@ -17,6 +17,8 @@ const state: State = {
 buttons.forEach(function (button) {
   if (button.dataset.operation === "calculate") {
     button.addEventListener("click", calculateValues);
+  } else if (button.dataset.operation === "clear") {
+    button.addEventListener("click", clearStateAndDisplay);
   } else {
     button.addEventListener("click", gatherValuesAndDisplay);
   }
@@ -67,11 +69,14 @@ function calculateValues() {
     case "+":
       state.firstValue = `${firstValue + lastValue}`;
       break;
-    case "+":
-      state.firstValue = `${firstValue + lastValue}`;
+    case "%":
+      state.firstValue = `${firstValue % lastValue}`;
       break;
-    case "+":
-      state.firstValue = `${firstValue + lastValue}`;
+    case "X":
+      state.firstValue = `${firstValue * lastValue}`;
+      break;
+    case "-":
+      state.firstValue = `${firstValue - lastValue}`;
       break;
   }
 
@@ -93,4 +98,12 @@ function displayValues(history: "previous" | "current" | "results") {
   } else {
     currentResultDisplay.textContent = text;
   }
+}
+
+function clearStateAndDisplay() {
+  state.firstValue = "";
+  state.operation = "";
+  state.lastValue = "";
+  prevResultDisplay.textContent = "0";
+  currentResultDisplay.textContent = "0";
 }
