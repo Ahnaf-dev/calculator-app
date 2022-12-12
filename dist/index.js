@@ -107,7 +107,7 @@ function resetPrevious() {
 }
 nightBtn.addEventListener("click", function () {
     changeCSSVars({
-        bg: "black",
+        bg: "grey",
         primary: "white",
         secondary: "black",
     });

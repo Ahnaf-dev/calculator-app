@@ -136,7 +136,7 @@ interface themeVars {
 
 nightBtn.addEventListener("click", () => {
   changeCSSVars({
-    bg: "black",
+    bg: "grey",
     primary: "white",
     secondary: "black",
   });
