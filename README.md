@@ -22,3 +22,4 @@ Calculator App with ability to choose dark or light theme.
 * Calculate values based on state.
 * Clean code by making code reusable, using clear variable names and simplified code.
 * Functional Programming.
+* Cross-browser compatible JavaScript compiled with TypeScript.
