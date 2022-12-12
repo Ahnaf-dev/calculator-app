@@ -8,12 +8,55 @@
       content="A Calculator App tested with Jest and coded in TypeScript"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
     <title>Calculator App</title>
   </head>
   <body>
     <main>
       <div class="container">
-        <h1>Calculator</h1>
+        <h1>Calculator App</h1>
+        <div class="calculator">
+          <div class="calculator__display">
+            <div class="calculator__results">
+              <p class="text-sm">308 * 42</p>
+              <p class="text-lg">12,936</p>
+            </div>
+          </div>
+          <div class="calculator__body">
+            <button class="calculator__operation" data-type="clear">AC</button>
+            <button></button>
+            <button></button>
+            <button class="calculator__operation" data-type="division">
+              %
+            </button>
+            <button data-type="num">7</button>
+            <button data-type="num">8</button>
+            <button data-type="num">9</button>
+            <button class="calculator__operation" data-type="multiplication">
+              X
+            </button>
+            <button data-type="num">4</button>
+            <button data-type="num">6</button>
+            <button data-type="num">7</button>
+            <button class="calculator__operation" data-type="substraction">
+              -
+            </button>
+            <button data-type="num">1</button>
+            <button data-type="num">2</button>
+            <button data-type="num">3</button>
+            <button class="calculator__operation" data-type="addition">
+              +
+            </button>
+            <button class="calculator__operation" data-type="previous">
+              CE
+            </button>
+            <button data-type="num">0</button>
+            <button></button>
+            <button class="calculator__operation" data-type="calculate">
+              =
+            </button>
+          </div>
+        </div>
       </div>
     </main>
   </body>
